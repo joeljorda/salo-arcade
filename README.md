@@ -2,8 +2,8 @@
     <img src="./saloarcade_image.png" width="175">
 </p>
 
-<p align="center" style="font-size: 32px; font-weight: bold;">Saló Arcade</p>
-<p align="center"><strong>Joel Jordà</strong></p>
+<h1 align="center">Saló Arcade by Joel</h1>
+
 
 ## Descripció
 
