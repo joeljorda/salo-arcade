@@ -7,7 +7,7 @@
 
 ## Descripció
 
-Saló Arcade és una senzilla aplicació de videojocs. S'inspira en els salons recreatius on passàvem les tardes quan erem petits i voliem competir perquè el nostre nom aparegués tant amunt al rànquing com ens fos possible.
+Saló Arcade és una senzilla aplicació de videojocs. S'inspira en els salons recreatius on passàvem les tardes quan érem petits i voliem competir perquè el nostre nom aparegués tant amunt al rànquing com ens fos possible.
 Mica en mica aquí hi podreu trobar jocs de memòria, tauler i habilitat. Espero que ho pugueu gaudir molt!
 
 ## Stack
