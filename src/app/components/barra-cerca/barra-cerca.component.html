@@ -1,0 +1,17 @@
+<div>
+  <form class="search-bar" (ngSubmit)="onSearch()">
+    <input
+      type="text"
+      name="searchText"
+      [(ngModel)]="searchText"
+      placeholder="Busca un joc..."
+    />
+
+    <button type="submit" aria-label="Buscar">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    <button type="button" class="reset-button" (click)="onReset()" aria-label="Reiniciar">
+      <span class="material-symbols-outlined">refresh</span>
+    </button>
+  </form>
+</div>

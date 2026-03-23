@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BarraCercaComponent } from './components/barra-cerca/barra-cerca.component';
+import { Element } from './models/element.model';
+import { ELEMENTS } from './mocks/dades-mock';
+import { LlistaElementsComponent } from './components/llista-elements/llista-elements.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [BarraCercaComponent, LlistaElementsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'ioc-angular-SaloArcade-JoelJorda';
 
-  constructor() {
-    console.log('Tot a punt! A què et ve de gust jugar avui?');
-  }
+export class AppComponent {
+  elements: Element[] = ELEMENTS;
+  
+  onSearch(searchText: string): void {
+    const text = searchText.toLowerCase();
+
+    this.elements = ELEMENTS.filter(element =>
+      element.name.toLowerCase().includes(text)
+    );
+  }  
 }

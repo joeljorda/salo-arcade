@@ -15,15 +15,18 @@
 }
 
   /* Pantalla, on anirà el contingut */
-  .screen {
+ .screen {
   position: relative;
   flex: 1;
   background-color: #23212e;
   padding: 40px;
   border-radius: 7px / 7px;
-  display: grid;
-  place-content: center;
-  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 24px;
+
 
   /* Sombra per simular la vora de la pantalla */
   box-shadow:
@@ -31,6 +34,18 @@
     inset -5px -5px 20px #000,  
     inset 0 0 50px #000; 
   }
+
+  .title-area {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #23212e;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
 
   .screen h1 {
     color: #fff;
@@ -44,39 +59,13 @@
       0 0 20px #232303;
   }
 
-  .text {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    color: #f1f122;
-    text-align: center;
-    text-shadow: 0 0 20px #232303;
-    
-  }
+.search-area {
+  width: 100%;
+  max-width: 720px;
+}
 
-  .pacman {
-    width: 50px;
-    height: 50px;
-    border-top: solid 50px #f1f122;
-    border-bottom: solid 50px #f1f122;
-    border-left: solid 50px #f1f122;
-    border-right: solid 50px transparent;
-    border-radius: 50%;
-    position: relative;
-  }
-
-  .pacman::before {
-    content: "";
-    position: absolute;
-    background: #000;
-    border-radius: 50%;
-    width: 12px;
-    height: 12px;
-    top: -25px;
-    left: -8px;   
-  }
-
-
-
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: 12px;
+}

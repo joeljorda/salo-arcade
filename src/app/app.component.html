@@ -1,9 +1,15 @@
 <div class="frame">
   <div class="screen">
-    <h1>Benvinguts a Saló Arcade</h1>
-    <p class="text">
-       <span class="pacman"></span>
-      Desenvolupat per Joel Jordà Rigau
-    </p>
+    <div class="title-area">
+      <h1>Benvinguts a Saló Arcade</h1>
+
+      <div class="search-area">
+        <app-barra-cerca (searchEvent)="onSearch($event)"></app-barra-cerca>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <app-llista-elements [elements]="elements"></app-llista-elements>
+    </div>
   </div>
 </div>
