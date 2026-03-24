@@ -1,10 +1,10 @@
 <article class="card">
-  <h2>{{ element.name }}</h2>
+  <h2>{{ element.name | uppercase}}</h2>
   <img *ngIf="element.imageUrl"
   [src]="element.imageUrl"
   [alt]="element.name">
   <p *ngIf="element.description">{{ element.description }}</p>
-  <p><strong>Puntuació:</strong> {{ element.score }}</p>
+  <p><strong>Puntuació:</strong> {{ element.score | number:'1.0-0' }}</p>
   <p *ngIf="element.difficulty">
     <strong>Dificultat:</strong> {{ element.difficulty }}</p>
 </article>

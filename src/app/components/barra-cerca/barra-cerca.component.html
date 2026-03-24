@@ -1,17 +1,26 @@
-<div>
-  <form class="search-bar" (ngSubmit)="onSearch()">
+<form class="search-bar-container" #searchForm="ngForm" (ngSubmit)="onSearch()">
+  <div class="search-bar">
     <input
       type="text"
       name="searchText"
       [(ngModel)]="searchText"
+      (ngModelChange)="onSearch()"
+      #searchModel="ngModel"
+      minlength="3"
       placeholder="Busca un joc..."
     />
 
-    <button type="submit" aria-label="Buscar">
+    <button type="submit" aria-label="Buscar"
+      [disabled]="searchText.length > 0 && searchForm.invalid">
       <span class="material-symbols-outlined">search</span>
     </button>
-    <button type="button" class="reset-button" (click)="onReset()" aria-label="Reiniciar">
+    <button
+      type="button"
+      class="reset-button"
+      (click)="onReset()"
+      aria-label="Reiniciar"
+    >
       <span class="material-symbols-outlined">refresh</span>
     </button>
-  </form>
-</div>
+  </div>
+</form>

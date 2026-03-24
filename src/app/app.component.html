@@ -10,6 +10,10 @@
 
     <div class="content-area">
       <app-llista-elements [elements]="elements"></app-llista-elements>
+
+      <p *ngIf="searchMessage" class="search-message">
+        {{ searchMessage }}
+      </p>
     </div>
   </div>
 </div>
