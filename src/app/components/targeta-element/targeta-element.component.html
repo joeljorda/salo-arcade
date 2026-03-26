@@ -1,10 +1,22 @@
 <article class="card">
-  <h2>{{ element.name | uppercase}}</h2>
-  <img *ngIf="element.imageUrl"
-  [src]="element.imageUrl"
-  [alt]="element.name">
-  <p *ngIf="element.description">{{ element.description }}</p>
-  <p><strong>Puntuació:</strong> {{ element.score | number:'1.0-0' }}</p>
-  <p *ngIf="element.difficulty">
-    <strong>Dificultat:</strong> {{ element.difficulty }}</p>
+  <div
+    *ngIf="element.imageUrl"
+    class="background"
+    [style.backgroundImage]="'url(' + element.imageUrl + ')'"
+  ></div>
+
+  <div class="overlay"></div>
+
+  <div class="content">
+    <h2>{{ element.name | uppercase }}</h2>
+    <div class="content-body">
+      <p *ngIf="element.description">{{ element.description }}</p>
+    </div>
+    <div class="content-footer">
+      <p><strong>Puntuació:</strong> {{ element.score | number: "1.0-0" }}</p>
+      <p *ngIf="element.difficulty">
+        <strong>Dificultat:</strong> {{ element.difficulty }}
+      </p>
+    </div>
+  </div>
 </article>

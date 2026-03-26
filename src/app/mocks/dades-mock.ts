@@ -7,6 +7,7 @@ export const ELEMENTS: Element[] = [
     score: 100,
     difficulty: 'Fàcil',
     description: 'Laberint on has de menjar punts i evitar fantasmes.',
+    imageUrl: 'images/pacman.jpeg',
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const ELEMENTS: Element[] = [
     score: 200,
     difficulty: 'Fàcil',
     description: 'Col·loca tres fitxes en línia abans que el teu oponent.',
+    imageUrl: 'images/3enratlla.jpeg',
   },
   {
     id: 3,
@@ -21,13 +23,14 @@ export const ELEMENTS: Element[] = [
     score: 80,
     difficulty: 'Difícil',
     description: 'Joc on has de trobar parelles de fitxes coincidents.',
+    imageUrl: 'images/memory.png',
   },
   {
     id: 4,
     name: 'Snake',
     score: 240,
     difficulty: 'Fàcil',
-    description: 'Controla una serp que creix a mesura que menja.',
+    description: 'Controla una serp que que va creixent a mesura que menja.',
   },
   {
     id: 5,
@@ -50,6 +53,7 @@ export const ELEMENTS: Element[] = [
     difficulty: 'Fàcil',
     description:
       'Lluita contra un oponent utilitzant una varietat de moviments i combos.',
+    imageUrl: 'images/StreetFighterII.jpeg',
   },
   {
     id: 8,
@@ -65,6 +69,7 @@ export const ELEMENTS: Element[] = [
     difficulty: 'Mitja',
     description:
       "Defensa la Terra d'una invasió alienígena disparant als invasors.",
+    imageUrl: 'images/spaceinvaders.jpeg',
   },
   {
     id: 10,
@@ -73,5 +78,6 @@ export const ELEMENTS: Element[] = [
     difficulty: 'Difícil',
     description:
       "Guia una granota a través d'una carretera i un riu, evitant obstacles.",
+    imageUrl: 'images/frogger.jpeg',
   },
 ];
