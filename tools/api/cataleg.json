@@ -1,0 +1,64 @@
+{
+  "elements": [
+    {
+      "id": "game-001",
+      "nom": "Pac-Man",
+      "descripcio": "Clàssic arcade on has de menjar tots els punts evitant els fantasmes.",
+      "categoria": "Arcade",
+      "preu": 19.99,
+      "imatge": "/images/pacman.jpeg",
+      "popular": true,
+      "stock": 12
+    },
+    {
+      "id": "game-002",
+      "nom": "3 en ratlla",
+      "descripcio": "Joc clàssic de tauler on cal alinear tres símbols abans que el rival.",
+      "categoria": "Puzzle",
+      "preu": 4.99,
+      "imatge": "/images/3enratlla.jpeg",
+      "popular": false,
+      "stock": 20
+    },
+    {
+      "id": "game-003",
+      "nom": "Frogger",
+      "descripcio": "Ajuda la granota a travessar carreteres i rius esquivant perills.",
+      "categoria": "Arcade",
+      "preu": 14.5,
+      "imatge": "/images/frogger.jpeg",
+      "popular": true,
+      "stock": 9
+    },
+    {
+      "id": "game-004",
+      "nom": "Memory",
+      "descripcio": "Joc de memòria on has de trobar les parelles de cartes iguals.",
+      "categoria": "Puzzle",
+      "preu": 6.75,
+      "imatge": "/images/memory.png",
+      "popular": false,
+      "stock": 15
+    },
+    {
+      "id": "game-005",
+      "nom": "Space Invaders",
+      "descripcio": "Defensa la Terra disparant contra onades d'invasors espacials.",
+      "categoria": "Shooter",
+      "preu": 24.99,
+      "imatge": "/images/spaceinvaders.jpeg",
+      "popular": true,
+      "stock": 8
+    },
+    {
+      "id": "game-006",
+      "nom": "Street Fighter II",
+      "descripcio": "Videojoc de lluita clàssic amb combats un contra un i personatges icònics.",
+      "categoria": "Lluita",
+      "preu": 29.99,
+      "imatge": "/images/StreetFighterII.jpeg",
+      "popular": true,
+      "stock": 5
+    }
+  ]
+}
