@@ -27,7 +27,7 @@
       "categoria": "Arcade",
       "preu": 14.5,
       "imatge": "/images/frogger.jpeg",
-      "popular": true,
+      "popular": false,
       "stock": 9
     },
     {

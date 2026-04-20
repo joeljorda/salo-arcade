@@ -1,11 +1,17 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { Component } from '@angular/core';
+import { CatalegPageComponent } from './pages/cataleg-page/cataleg-page.component';
 
 @Component({
-    selector: "app-root",
-    standalone: true,
-    imports: [RouterOutlet],
-    templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.scss"],
+  selector: 'app-root',
+  standalone: true,
+  imports: [CatalegPageComponent],
+  template: `<app-cataleg-page />`,
+  styles: [`
+    :host {
+      display: block;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+    }
+  `]
 })
 export class AppComponent {}

@@ -1,20 +1,18 @@
-import { Component, OnInit, inject } from '@angular/core';
+
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ElementService } from '../../serveis/element.service';
+import { FormulariCercaComponent } from '../../components/formulari-cerca/formulari-cerca.component';
 
 @Component({
   selector: 'app-cataleg-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormulariCercaComponent],
   templateUrl: './cataleg-page.component.html',
-  styleUrls: ['./cataleg-page.component.scss'],
+  styleUrl: './cataleg-page.component.scss'
 })
 export class CatalegPageComponent implements OnInit {
-  private elementService = inject(ElementService);
-
-  elements = this.elementService.elements;
-  carregant = this.elementService.carregant;
-  error = this.elementService.error;
+  constructor(public elementService: ElementService) {}
 
   ngOnInit(): void {
     this.elementService.obtenirPopulars();

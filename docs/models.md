@@ -2,7 +2,7 @@
 
 ## Interfícies principals
 
-### ElementApiResponse (API)
+### ElementApiResponse (resposta API)
 
 Format de les dades que retorna l'API
 
@@ -42,8 +42,16 @@ interface ElementCataleg {
 ### adaptarElementApi()
 Transforma un element rebut de l'API al model intern.
 
+- Canvia `nom` → `titol`
+- Canvia `imatge` → `imatgeUrl`
+- Canvia `popular` → `esPopular`
+- Canvia `stock` → `unitats`
+
 ### adaptarElementsApi()
-Aplica la transformació a un array d'elements.
+Aplica la transformació a un array d'elements
+
+### elementBuit()
+Retorna un element amb valors per defecte.
 
 ## Mapeig de camps
 
@@ -57,4 +65,3 @@ Aplica la transformació a un array d'elements.
 | `imatge`      | `imatgeUrl`  | `string`   | Renombrat                      |
 | `popular`     | `esPopular`  | `boolean`  | Renombrat                      |
 | `stock`       | `unitats`    | `number`   | Renombrat                      |
-| —             | `notes`      | `string[]` | Afegit amb valor inicial buit  |
