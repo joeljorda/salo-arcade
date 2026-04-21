@@ -33,7 +33,6 @@ interface ElementCataleg {
   imatgeUrl: string;
   esPopular: boolean;
   unitats: number;
-  notes?: string[];
 }
 ```
 
@@ -49,9 +48,6 @@ Transforma un element rebut de l'API al model intern.
 
 ### adaptarElementsApi()
 Aplica la transformació a un array d'elements
-
-### elementBuit()
-Retorna un element amb valors per defecte.
 
 ## Mapeig de camps
 

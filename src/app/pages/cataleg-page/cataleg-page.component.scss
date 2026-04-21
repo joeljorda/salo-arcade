@@ -2,21 +2,35 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.12), transparent 35%),
+    linear-gradient(180deg, #0b1020 0%, #111827 100%);
+  color: #f8fafc;
 }
 
 .page-header {
   margin-bottom: 2rem;
+  text-align: center;
 
   h1 {
-    margin: 0 0 0.5rem;
-    color: #333;
+    margin: 0 0 0.75rem;
+    color: #facc15;
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-shadow:
+      0 0 8px rgba(250, 204, 21, 0.3),
+      0 0 18px rgba(250, 204, 21, 0.16);
   }
+}
 
-  .subtitle {
-    margin: 0;
-    color: #666;
-    font-size: 1.1rem;
-  }
+.seccio-titol {
+  margin: 0;
+  color: #93c5fd;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(147, 197, 253, 0.2);
 }
 
 // Estat: Carregant
@@ -29,15 +43,16 @@
   .spinner {
     width: 50px;
     height: 50px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid #3498db;
+    border: 4px solid rgba(255, 255, 255, 0.12);
+    border-top: 4px solid #22d3ee;
     border-radius: 50%;
+    box-shadow: 0 0 16px rgba(34, 211, 238, 0.25);
     animation: spin 1s linear infinite;
   }
 
   p {
     margin-top: 1rem;
-    color: #666;
+    color: #cbd5e1;
   }
 }
 
@@ -48,12 +63,13 @@
 
 // Estat: Error
 .estat-error {
-  background-color: #fee;
-  border: 2px solid #e74c3c;
-  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.35), rgba(69, 10, 10, 0.3));
+  border: 2px solid #ef4444;
+  border-radius: 12px;
   padding: 2rem;
   text-align: center;
   margin: 2rem 0;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.15);
 
   .error-icon {
     font-size: 3rem;
@@ -62,27 +78,30 @@
 
   h2 {
     margin: 0 0 1rem;
-    color: #c0392b;
+    color: #fecaca;
   }
 
   .error-missatge {
     margin: 0 0 1.5rem;
-    color: #666;
+    color: #e5e7eb;
     font-size: 1rem;
   }
 
   .btn-reintentar {
-    background-color: #e74c3c;
+    background: linear-gradient(180deg, #ef4444, #dc2626);
     color: white;
-    border: none;
+    border: 1px solid #fca5a5;
     padding: 0.75rem 2rem;
-    border-radius: 4px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
 
     &:hover {
-      background-color: #c0392b;
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(239, 68, 68, 0.3);
+      background: linear-gradient(180deg, #f87171, #dc2626);
     }
   }
 }
@@ -91,32 +110,81 @@
 .sense-resultats {
   text-align: center;
   padding: 3rem;
-  color: #666;
+  color: #cbd5e1;
   font-size: 1.1rem;
+  background: rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(147, 197, 253, 0.15);
+  border-radius: 12px;
 }
 
 .elements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+app-preferits-panel {
+  display: block;
+  margin: 2rem 0;
 }
 
 .element-card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: linear-gradient(180deg, #172036 0%, #111827 100%);
+  border: 1px solid rgba(96, 165, 250, 0.22);
+  border-radius: 14px;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: rgba(34, 211, 238, 0.45);
+    box-shadow:
+      0 12px 28px rgba(0, 0, 0, 0.28),
+      0 0 18px rgba(34, 211, 238, 0.08);
   }
 
   .element-imatge {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .btn-preferit {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(15, 23, 42, 0.85);
+    color: #facc15;
+    border: 2px solid #facc15;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.25),
+      0 0 12px rgba(250, 204, 21, 0.12);
+
+    &:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        0 0 16px rgba(250, 204, 21, 0.25);
+    }
+
+    &.actiu {
+      background: #facc15;
+      color: #111827;
+    }
   }
 
   .element-info {
@@ -125,19 +193,21 @@
     .element-nom {
       margin: 0 0 0.5rem;
       font-size: 1.2rem;
-      color: #333;
+      color: #f8fafc;
     }
 
     .element-categoria {
       margin: 0 0 0.75rem;
       font-size: 0.9rem;
-      color: #3498db;
-      font-weight: 600;
+      color: #22d3ee;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .element-descripcio {
       margin: 0 0 1rem;
-      color: #666;
+      color: #cbd5e1;
       font-size: 0.95rem;
       line-height: 1.4;
     }
@@ -147,24 +217,27 @@
       justify-content: space-between;
       align-items: center;
       padding-top: 0.75rem;
-      border-top: 1px solid #eee;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
 
       .element-preu {
         font-size: 1.3rem;
         font-weight: bold;
-        color: #27ae60;
+        color: #4ade80;
+        text-shadow: 0 0 10px rgba(74, 222, 128, 0.15);
       }
 
       .element-stock {
         font-size: 0.9rem;
-        color: #666;
+        color: #e2e8f0;
         padding: 0.25rem 0.5rem;
-        background-color: #ecf0f1;
-        border-radius: 4px;
+        background-color: rgba(148, 163, 184, 0.14);
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        border-radius: 999px;
 
         &.baix-stock {
-          background-color: #ffe6e6;
-          color: #e74c3c;
+          background-color: rgba(239, 68, 68, 0.12);
+          border-color: rgba(239, 68, 68, 0.2);
+          color: #fca5a5;
         }
       }
     }
@@ -175,6 +248,6 @@
 .estat-inicial {
   text-align: center;
   padding: 3rem;
-  color: #999;
+  color: #94a3b8;
   font-style: italic;
 }

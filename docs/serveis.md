@@ -28,7 +28,7 @@ npx json-server --watch tools/api/cataleg.json --port 4301 --delay 600
 ### Signals (només lectura)
 
 - `elements`: Conté la llista d'elements carregats
-- `estat`: Indica si hi ha una petició en curs
+- `estat`: Indica l'estat actual del servei
 - `error`: Conté un missatge d'error si la petició falla
 
 
@@ -81,23 +81,15 @@ Cerca elements per terme de cerca.
 - Si el terme és buit: carrega els elements populars
 - Si el terme és vàlid: cerca amb `/elements?nom_like={terme}`
 
-#### codiDisponible(codi: string): Promise<boolean>
-
-Comprova si un codi d'element està disponible (no existeix).
-
-**Ús:** Validador asíncron per formularis
-
-**Retorna:** `true` si el codi està disponible, `false` si ja existeix
 
 #### reiniciar(): void
 
 Neteja estat i elements del servei.
 
-### Signals exposades (només lectura)
+#### comprovarResultatsCerca(terme: string)
 
-- `elements()`: Array d'elements actuals
-- `estat()`: Estat actual del servei
-- `error()`: Missatge d'error (si n'hi ha)
+Gestiona la comprovació de resultats per a la validació asíncrona.
+
 
 ### Gestió d'errors
 

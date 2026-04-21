@@ -17,15 +17,3 @@ export function adaptarElementsApi(apiResponses: ElementApiResponse[]): ElementC
     return apiResponses.map(adaptarElementApi);
 }
 
-export function elementBuit(): ElementCataleg {
-    return {
-        id: '',
-        titol: '',
-        descripcio: '',
-        categoria: '',
-        preu: 0,
-        imatgeUrl: 'https://via.placeholder.com/300x200?text=Sense+imatge',
-        esPopular: false,
-        unitats: 0,
-    };
-}

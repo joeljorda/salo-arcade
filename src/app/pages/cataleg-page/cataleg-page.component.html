@@ -1,7 +1,6 @@
 <div class="cataleg-page">
   <header class="page-header">
     <h1>Saló Arcade</h1>
-    <p class="subtitle">Elements populars del nostre catàleg</p>
   </header>
 
   <!-- Formulari de cerca -->
@@ -18,9 +17,7 @@
     <div class="error-icon">⚠️</div>
     <h2>Error al carregar elements</h2>
     <p class="error-missatge">{{ elementService.error() }}</p>
-    <button class="btn-reintentar" (click)="reintentar()">
-      Reintentar
-    </button>
+    <button class="btn-reintentar" (click)="reintentar()">Reintentar</button>
   </div>
 
   <!-- Estat: Èxit (elements carregats) -->
@@ -30,17 +27,63 @@
       <p>No s'han trobat elements populars</p>
     </div>
 
+    <!-- Panell de preferits -->
+    <app-preferits-panel></app-preferits-panel>
+
+    <!-- Títol de la secció -->
+    <h2 class="seccio-titol">
+      {{
+        elementService.filtreActiu()
+          ? "Resultats de la cerca"
+          : "Elements populars del nostre catàleg"
+      }}
+    </h2>
+
     <!-- Llistat d'elements -->
     <div class="elements-grid" *ngIf="elementService.elements().length > 0">
-      <div class="element-card" *ngFor="let element of elementService.elements()">
-        <img [src]="element.imatgeUrl" [alt]="element.titol" class="element-imatge">
+      <div
+        class="sense-resultats"
+        *ngIf="elementService.elements().length === 0"
+      >
+        <p *ngIf="!elementService.filtreActiu()">
+          No s'han trobat elements populars
+        </p>
+        <p *ngIf="elementService.filtreActiu()">
+          No s'han trobat resultats per a la cerca
+        </p>
+      </div>
+
+      <div
+        class="element-card"
+        *ngFor="let element of elementService.elements()"
+      >
+        <img
+          [src]="element.imatgeUrl"
+          [alt]="element.titol"
+          class="element-imatge"
+        />
+
+        <button
+          type="button"
+          class="btn-preferit"
+          [class.actiu]="preferitsService.esPreferit(element.id)"
+          (click)="togglePreferit(element)"
+        >
+          {{ preferitsService.esPreferit(element.id) ? "★" : "☆" }}
+        </button>
+
         <div class="element-info">
           <h3 class="element-nom">{{ element.titol }}</h3>
           <p class="element-categoria">{{ element.categoria }}</p>
           <p class="element-descripcio">{{ element.descripcio }}</p>
           <div class="element-footer">
-            <span class="element-preu">{{ element.preu | number:'1.2-2' }}€</span>
-            <span class="element-stock" [class.baix-stock]="element.unitats < 20">
+            <span class="element-preu"
+              >{{ element.preu | number: "1.2-2" }}€</span
+            >
+            <span
+              class="element-stock"
+              [class.baix-stock]="element.unitats < 20"
+            >
               Stock: {{ element.unitats }}
             </span>
           </div>

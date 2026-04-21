@@ -27,6 +27,9 @@ export class ElementService {
 
   private apiUrl = `${environment.apiUrl}/elements`;
 
+  // Filtre de categoria, per gestionar la visualització d'elements per categoria
+  public filtreActiu = signal<string>('');
+
   constructor(private http: HttpClient) {}
 
   /**
@@ -35,6 +38,7 @@ export class ElementService {
   obtenirPopulars(): void {
     this.estatSignal.set('carregant');
     this.errorSignal.set('');
+    this.filtreActiu.set('');
 
     this.http
       .get<ElementApiResponse[]>(`${this.apiUrl}?popular=true`)
@@ -66,6 +70,7 @@ export class ElementService {
     }
     this.estatSignal.set('carregant');
     this.errorSignal.set('');
+    this.filtreActiu.set(text);
 
     this.http
       .get<ElementApiResponse[]>(
