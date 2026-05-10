@@ -12,13 +12,17 @@ import { ArcadeItem } from '../../models/arcade-item.model';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  itemSize = 140;
+  readonly itemSize = 160;
 
-  items: ArcadeItem[] = Array.from({ length: 60 }, (_, index) => ({
+  readonly items: ArcadeItem[] = Array.from({ length: 60 }, (_, index) => ({
     id: index + 1,
     title: `Arcade Item ${index + 1}`,
     category: index % 2 === 0 ? 'Classic Arcade' : 'Modern Arcade',
     year: 1980 + (index % 40),
-    description: 'Joc de prova de Saló Arcade.',
+    description: 'Element de prova de Saló Arcade.',
   }));
+
+  trackByItemId(_index: number, item: ArcadeItem): number {
+    return item.id;
+  }
 }

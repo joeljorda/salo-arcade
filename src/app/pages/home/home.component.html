@@ -1,14 +1,17 @@
 <section class="home-page">
-  <h2>Home</h2>
-
-  <p>Llistat principal d'elements arcade.</p>
+  <header class="home-header">
+    <h2>Catàleg arcade</h2>
+    <p>Llistat principal d'elements arcade.</p>
+  </header>
 
   <cdk-virtual-scroll-viewport
     class="items-viewport"
     [itemSize]="itemSize"
+    [minBufferPx]="itemSize * 4"
+    [maxBufferPx]="itemSize * 8"
   >
     <app-element-card
-      *cdkVirtualFor="let item of items"
+      *cdkVirtualFor="let item of items; trackBy: trackByItemId"
       [item]="item"
     ></app-element-card>
   </cdk-virtual-scroll-viewport>
