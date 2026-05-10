@@ -1,1 +1,35 @@
-<p>login works!</p>
+<section class="login-page">
+  <h2>Login</h2>
+
+  <p>Accedeix per consultar la secció de preferits.</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+    </div>
+
+    <div>
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" />
+    </div>
+
+    <button type="submit" [disabled]="isLoading">
+      @if (isLoading) {
+        Entrant...
+      } @else {
+        Iniciar sessió
+      }
+    </button>
+  </form>
+
+  @if (errorMessage) {
+    <p class="error-message">{{ errorMessage }}</p>
+  }
+
+  <section class="test-credentials">
+    <h3>Credencials de prova</h3>
+    <p><strong>Email:</strong> admin&#64;test.com</p>
+    <p><strong>Password:</strong> 1234</p>
+  </section>
+</section>

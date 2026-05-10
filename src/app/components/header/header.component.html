@@ -1,10 +1,16 @@
 <header class="main-header">
   <h1>Saló Arcade</h1>
 
-  <nav>
+   <nav>
     <a routerLink="/home" routerLinkActive="active-link">Home</a>
     <a routerLink="/search" routerLinkActive="active-link">Search</a>
     <a routerLink="/favorites" routerLinkActive="active-link">Favorites</a>
-    <a routerLink="/login" routerLinkActive="active-link">Login</a>
+
+    @if (user$ | async; as user) {
+      <span class="user-name">Hola, {{ user.name }}</span>
+      <button type="button" (click)="logout()">Tancar sessió</button>
+    } @else {
+      <a routerLink="/login" routerLinkActive="active-link">Login</a>
+    }
   </nav>
 </header>
