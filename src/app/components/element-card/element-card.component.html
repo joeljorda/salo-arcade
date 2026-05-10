@@ -1,1 +1,8 @@
-<p>item-card works!</p>
+<article class="element-card">
+  <h3>{{ item.title }}</h3>
+
+  <p>{{ item.category }} · {{ item.year }}</p>
+  <p>{{ item.description }}</p>
+
+  <a [routerLink]="['/detail', item.id]">Veure detall</a>
+</article>
