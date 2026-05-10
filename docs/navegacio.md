@@ -10,7 +10,7 @@
 | `/detail/:id` | `DetailComponent` | Públic | Detall d'un element. Rep l'identificador amb el paràmetre `id` de la URL. |
 | `/favorites` | `FavoritesComponent` | Privat | Secció de preferits. |
 | `/login` | `LoginComponent` | Públic | Formulari d'autenticació simulada. |
-| `**` | Redirecció | Públic | Les URL errònies redirigeix a `/home`. |
+| `**` | Redirecció | Públic | Les URL errònies redirigeixen a `/home`. |
 
 
 ## Configuració del sistema de rutes

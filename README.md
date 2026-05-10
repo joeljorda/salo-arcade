@@ -1,27 +1,58 @@
-# IocAngularSaloArcadeJoelJorda
+# Saló Arcade
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+## Descripció de l'aplicació
 
-## Development server
+Aplicació standalone que gestiona un catàleg de jocs arcade estil retro.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Mapa de rutes
 
-## Code scaffolding
+| Path | Component | Accés | Descripció |
+|---|---|---|---|
+| `/` | Redirecció | Públic | Redirigeix automàticament a `/home`. |
+| `/home` | `HomeComponent` | Públic | Pàgina principal. Mostra el catàleg d'elements. |
+| `/search` | `SearchComponent` | Públic | Vista de cerca d'elements. Equival a la ruta `/cerca` de l'enunciat. |
+| `/detail/:id` | `DetailComponent` | Públic | Detall d'un element. Rep l'identificador amb el paràmetre `id` de la URL. |
+| `/favorites` | `FavoritesComponent` | Privat | Secció de preferits. |
+| `/login` | `LoginComponent` | Públic | Formulari d'autenticació simulada. |
+| `**` | Redirecció | Públic | Les URL errònies redirigeixen a `/home`. |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instruccions d'execució en local
 
-## Build
+```bash
+git clone https://github.com/joeljorda/salo-arcade.git
+cd salo-arcade
+git checkout ra4-navegacio
+npm install
+ng serve
+```
+Obrir al navegador:
+```
+http://localhost:4200
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Build de producció
 
-## Running unit tests
+Generar el build:
+```
+ng build --configuration production
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Els fitxers generats es creen a la carpeta `dist/`
 
-## Running end-to-end tests
+### Mides del bundle
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Tipus | Fitxer | Names | Raw size | Estimated transfer size |
+|---|---|---|---:|---:|
+| Initial chunk files | `main-CXA4F42U.js` | `main` | 170.32 kB | 39.63 kB |
+| Initial chunk files | `chunk-XJYRVA4E.js` | `-` | 143.81 kB | 41.65 kB |
+| Initial chunk files | `polyfills-FFHMD2TL.js` | `polyfills` | 34.52 kB | 11.28 kB |
+| Initial chunk files | `styles-3YQOGY5O.css` | `styles` | 693 bytes | 693 bytes |
+| Initial total | — | — | 349.34 kB | 93.25 kB |
+| Lazy chunk files | `chunk-HYGRXEVO.js` | `favorites-component` | 765 bytes | 765 bytes |
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Credencials de prova
+
+Podeu utilitzar el següent usuari de prova:
+- Email: admin@test.com
+- Password: 1234
