@@ -1,0 +1,19 @@
+.main-header {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+}
